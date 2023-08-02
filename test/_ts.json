@@ -1,0 +1,13 @@
+{
+  "source": {
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "((^|\\/|\\\\)_|spec\\.js$)"
+  },
+  "opts": {
+    "template": "./",
+    "encoding": "utf8",
+    "destination": "console",
+    "output": "typescript",
+    "validate": false
+  }
+}

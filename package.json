@@ -1,0 +1,26 @@
+{
+  "name": "@borgar/jsdoc-tsmd",
+  "version": "0.1.0",
+  "description": "A (limited) JSDoc template that prints Markdown and TypeScript declaration files",
+  "main": "publish.js",
+  "scripts": {
+    "lint": "eslint *.js test/**/*.js",
+    "test": "tape test/*.spec.js"
+  },
+  "author": "Borgar Þorsteinsson <borgar@borgar.net> (http://borgar.net/)",
+  "license": "MIT",
+  "peerDependencies": {
+    "jsdoc": "~4.0.2"
+  },
+  "devDependencies": {
+    "@borgar/eslint-config": "~3.0.0",
+    "eslint": "~8.43.0",
+    "jsdoc": "~4.0.2",
+    "nodemon": "~3.0.1",
+    "tape": "~5.6.6"
+  },
+  "dependencies": {
+    "jsdoctypeparser": "~9.0.0",
+    "typescript": "~5.1.3"
+  }
+}
