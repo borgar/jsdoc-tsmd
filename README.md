@@ -32,7 +32,7 @@ Running `jsdoc -c myconfig.json src` should then emit some Markdown docs (given 
 
 #### Options:
 
-https://jsdoc.app/about-configuring-jsdoc.html
+Generally, refer to JSDoc's [documentation on how to configure it](https://jsdoc.app/about-configuring-jsdoc.html) but these options have special meaning here:
 
 * `destination` - Where to save the emitted text, using `"console"` will log the output to the console.
 * `output` - Set this to `"typescript"` to emit TypeScript type declarations rather than Markdown docs.
