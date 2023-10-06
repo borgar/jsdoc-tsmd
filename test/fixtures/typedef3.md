@@ -4,7 +4,7 @@
 
 ## Type
 
-### <a id="UserSettings" href="#UserSettings">#</a> UserSettings = `Record<string, any>`
+### <a id="UserSettings" href="#UserSettings">#</a> UserSettings
 
 A state collection for a user.
 

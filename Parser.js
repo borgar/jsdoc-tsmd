@@ -156,7 +156,7 @@ class Parser {
           addPropsAsMembers(item, d.properties);
           delete d.properties;
 
-          if (d.kind === 'typedef' && d.type.names[0] === 'function') {
+          if (d.kind === 'typedef' && d.type?.names[0] === 'function') {
             // convert args to a blank callable member
             item.add(new Node({
               kind: 'function',

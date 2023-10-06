@@ -144,9 +144,16 @@ class FormatterTS {
    * Format a type definition
    */
   formatTypedef (d) {
-    // can a JSDoc typedef extend another typedef?
     this.print(this.formatDescription(d));
-    this.print(`${this.declare(d)}type ${d.name} = ${this.formatType(d)};`);
+    const supers = [];
+    // if (d.type?.names.length) {
+    //   supers.push(d.type.names.map(fixType));
+    // }
+    if (d.augments) {
+      supers.push(...d.augments);
+    }
+    const extend = supers.length ? supers.join(' & ') + ' & ' : '';
+    this.print(`${this.declare(d)}type ${d.name} = ${extend}${this.formatType(d)};`);
   }
 
   formatMember (d) {

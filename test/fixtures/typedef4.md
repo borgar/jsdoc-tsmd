@@ -6,7 +6,7 @@
 
 ## Types
 
-### <a id="Airline" href="#Airline">#</a> Airline = `object`
+### <a id="Airline" href="#Airline">#</a> Airline
 
 ##### Properties
 
@@ -19,7 +19,7 @@
 
 ---
 
-### <a id="Booking" href="#Booking">#</a> Booking = `Record<string, any>`
+### <a id="Booking" href="#Booking">#</a> Booking
 
 An airline booking.
 

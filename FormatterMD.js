@@ -86,16 +86,22 @@ class FormatterMD {
     // does it warrant a returns?
     let rets = '';
     if (!forIndex) {
+      const isTypeDef = d.kind === 'typedef';
       if (!(isConstructor || isClass) && (d.returns || d.yields || d.args)) {
         rets = ` ${RETURN} ${this.formatReturns(d)}`;
       }
-      else if (d.kind === 'constant' || d.kind === 'typedef') {
+      else if (d.kind === 'constant' || isTypeDef) {
         // XXX: maybe use ⇒ for returns, and something else then type? →
         if (d.defaultvalue && !d.isObject) {
           rets = ` ${ISTYPE} ${repValue(d.defaultvalue)}`;
         }
         else {
-          rets = ` ${ISTYPE} ${this.formatType(d)}`;
+          // skip redundant object types
+          const typeStr = this.formatType(d);
+          const isObjectType = /^`(?:Record|Object)(<string,\s*any>)?`$/i.test(typeStr);
+          if (!isTypeDef || !isObjectType) {
+            rets = ` ${ISTYPE} ${typeStr}`;
+          }
         }
       }
     }
