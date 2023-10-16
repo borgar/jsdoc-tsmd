@@ -1,6 +1,6 @@
 {
   "name": "@borgar/jsdoc-tsmd",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A (limited) JSDoc template that prints Markdown and TypeScript declaration files",
   "main": "publish.js",
   "scripts": {

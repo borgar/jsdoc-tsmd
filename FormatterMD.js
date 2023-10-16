@@ -218,14 +218,19 @@ class FormatterMD {
    * @returns {string}
    */
   formatSee (d) {
+    let ret = '';
     if (d.see) {
-      let see = d.see;
-      if (/^[a-z][a-z0-9]*$/i.test(see)) {
-        see = `{@link ${see}}`;
-      }
-      return `**See also:** ${fixLinks(see)}.`;
+      ret = '**See also:**';
+      const see = Array.isArray(d.see) ? d.see : [ d.see ];
+      see.forEach((s, i) => {
+        if (/^[a-z][a-z0-9]*$/i.test(s)) {
+          s = (i ? ', ' : ' ') + `{@link ${s}}`;
+        }
+        ret += ' ' + fixLinks(s);
+      });
+      ret += '.';
     }
-    return '';
+    return ret;
   }
 
   /**
